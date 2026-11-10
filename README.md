@@ -6,7 +6,15 @@ Private EC2102 study site, expanded on 9 November 2026.
 
 IB400 contains 400 original five-choice MCQs with answer keys, explanations for all choices, concept links, three difficulty levels, topic filters, practice and exam modes, review queues, bookmarks and browser-local progress with export/import.
 
-EC2102 Decoded contains 12 chapters, 148 concept cards and 21 interactive experiment views. The source set is 13 supplied lecture PDFs and tutorials 1–9, including two official answer sheets and eight annotated companions checked against the course originals. The coverage map accounts for all 857 pages across these 32 PDFs. The original IS–LM–FE / AD–AS simulator is integrated under `dist/policy/`. The old top-level hash routes redirect into the new sections.
+EC2102 Decoded contains 12 chapters, 148 concept cards and 21 interactive experiment views. Every concept now has a guided derivation, graph-building sequence, independent increase and decrease sequences, and edge-case reasoning. Predict-before-reveal checkpoints, typed explanations, curve highlighting and an enlarged graph view support active study. Walk position and predictions are stored with browser-local progress and included in export/import. Each concept opens a relevant experiment below its walkthrough.
+
+The source set is 13 supplied lecture PDFs and tutorials 1–9, including two official answer sheets and eight annotated companions checked against the course originals. The coverage map accounts for all 857 pages across these 32 PDFs. The original IS–LM–FE / AD–AS simulator is integrated under `dist/policy/`. The old top-level hash routes redirect into the new sections.
+
+## November 10 guided walkthroughs
+
+All 148 concepts have five guided sequences, with 2,443 steps, 743 prediction checkpoints and 121 diagrams (86 plots and 35 reasoning maps). Symbol tables identify assumptions and connect illustrative notation to the lecture notation. The IS, LM and AD sequences explicitly transfer underlying market equilibria into the derived axes before drawing the locus. Both directional cases and boundary branches are worked separately. Figures use labelled numerical teaching calibrations. Final browser verification passed all 2,443 steps, 740 sequences, 743 checkpoints and all 12 mobile chapter layouts, with no page errors. The UI checks also passed resume, typed predictions, export/import, keyboard navigation, graph enlargement and a question-bank regression.
+
+Prediction text and visited steps are learning records, not automatic proof of understanding. The existing 400 questions and answer content are unchanged by this update.
 
 ## November 9 content audit
 
@@ -17,6 +25,8 @@ The consumption experiment includes the course square-root utility and a separat
 ## Source layout
 
 - `dist/data.json` stores the original question and concept content with PDF page references.
+- `dist/walkthroughs.json` stores the guided sequences, source references and equation-generated diagrams.
+- `dist/walkthrough.js` renders step navigation, graph reveals, predictions and saved walkthrough progress.
 - `dist/app.js` implements the study interface and progress storage.
 - `dist/labs.js` contains the interactive model equations and charts.
 - `dist/styles.css` implements the responsive layout.
