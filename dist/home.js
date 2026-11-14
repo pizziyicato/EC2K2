@@ -19,7 +19,7 @@ const sections = [
   {
     route: 'pb20', number: '03', name: 'PB20', label: 'Follow the whole case', count: '20', unit: 'connected cases',
     facts: ['8 parts per case', '160 MCQs · 6 choices'],
-    description: 'Carry one setup through eight related questions. Twelve cases use Jensen Huang’s affair-news context and eight use US midterms. Every economic scenario and numerical shock is a hypothetical EC2102 model.',
+    description: 'Carry one setup through eight related questions. Twelve affair-related cases examine fictional recovery budgets, work choices and service businesses. Eight US midterm cases examine spending, taxes, employment and monetary policy. All economic scenarios are hypothetical EC2102 models.',
     action: 'Explore PB20'
   },
   {
@@ -62,7 +62,7 @@ export function renderHome({signedIn = false, statsHtml = ''} = {}) {
         <p class="home-entry-note">${signedIn ? 'Learn a mechanism. Test it. Revisit what you missed.' : 'Sign in to open the banks and Decoded, and save your progress.'}</p>
       </div>
       <aside class="home-creator" aria-labelledby="home-creator-title">
-        <div class="home-creator-heading"><span class="home-creator-mark" aria-hidden="true">p.</span><div><p class="home-kicker">Made by pizziyicato</p><h2 id="home-creator-title">Beyond the graphs.</h2></div></div>
+        <div class="home-creator-heading"><span class="home-creator-mark" aria-hidden="true">p.</span><div><p class="home-kicker">Made by Ziyi</p><h2 id="home-creator-title">Beyond the graphs.</h2></div></div>
         <div class="home-profile-links">
           <a class="home-profile-link" href="https://www.instagram.com/pizziyicato/" target="_blank" rel="noopener noreferrer" aria-label="Visit pizziyicato on Instagram, opens in a new tab"><span class="home-profile-icon">${instagram}</span><span><strong>Instagram</strong><small>@pizziyicato</small></span>${outward}</a>
           <a class="home-profile-link" href="https://github.com/pizziyicato" target="_blank" rel="noopener noreferrer" aria-label="Visit pizziyicato on GitHub, opens in a new tab"><span class="home-profile-icon">${github}</span><span><strong>GitHub</strong><small>pizziyicato</small></span>${outward}</a>

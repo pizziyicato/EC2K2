@@ -1,6 +1,6 @@
 const KEY='ec2k2-ui-language';
 const dictionary={
- 'Home':'首页','Language':'语言','Main navigation':'主菜单','YOUR EC2102 STUDY SPACE':'你的 EC2102 学习空间',
+ 'Show Chinese translation · 中文':'显示中文翻译','Hide translation · 隐藏翻译':'隐藏翻译','Home':'首页','Language':'语言','Main navigation':'主菜单','YOUR EC2102 STUDY SPACE':'你的 EC2102 学习空间',
  'YOUR EC2K2 ACCOUNT':'你的 EC2K2 账户','Log in / Sign up':'登录 / 注册','My account':'我的账户','Create account':'创建账户',
  'Owner dashboard':'站主控制台','Owner access only':'仅限站主访问','Open account':'打开账户','Your account':'你的账户',
  'Export progress':'导出进度','Import':'导入','Display name':'显示名称','Sign out':'退出登录','Sync progress now':'立即同步进度',
@@ -38,8 +38,7 @@ const dictionary={
  'Correct. Now check the mechanism.':'正确。接着检查背后的机制。','Revisit the mechanism.':'重新梳理背后的机制。','Unanswered':'未作答',
  'Turn the mistakes into understanding.':'从错误中建立理解。','Review every answer':'逐题查看解析','Redo incorrect & unanswered':'重做答错及未作答题目','Redo the full set':'重做整组题目','Choose another set':'选择另一组题目',
  'Your answer trail':'你的作答记录','Every option has an explanation.':'每个选项都有解析。','Start a practice set':'开始一组练习','Open IB400':'打开 IB400',
- 'Translate question · 中文':'翻译题目 · Google 翻译','Translate explanations · 中文':'翻译解析 · Google 翻译','Translate case brief · 中文':'翻译案例背景 · Google 翻译',
- 'Translation opens in Google Translate.':'点击后将在 Google 翻译中打开。',
+ 'Translate question · 中文':'查看中文题目','Translate explanations · 中文':'查看中文解析','Translate case brief · 中文':'查看中文案例背景',
  'Explore Decoded':'探索 Decoded','Practise with IB400':'使用 IB400 练习','Five ways to make the course yours.':'五种方式，逐步掌握课程。',
  'Find out what you understand':'检验你的理解','Push beyond the familiar':'突破熟悉的题型','Follow the entire chain of reasoning':'跟完整个推理过程','Make every curve mean something':'理解每条曲线的含义','Rebuild the tutorial reasoning':'重建习题推理',
  'PRACTISE & DIAGNOSE':'练习与诊断','COMBINE & CHALLENGE':'综合与挑战','APPLY & CONNECT':'应用与联系','EXPLORE & UNDERSTAND':'探索与理解','REVISIT & RECONSTRUCT':'复习与重建',
@@ -109,12 +108,12 @@ Object.assign(dictionary,{
 });
 const originals=new WeakMap();let language='en',scheduled=false,observer;
 try{language=localStorage.getItem(KEY)==='zh'?'zh':'en'}catch{}
-const protectedSelector='.choices,.feedback>p,.pb-news,.pb-brief ol,.pb-card>p,.pb-card h2,.pb-objectives,.concept-panel>.explain,.mechanism,.cases,.example,.formula,.walk-why,.walk-math,.walk-reason h4,.walk-predict p,.walk-predict textarea,.walk-predict details p,.walk-complete li h4,.walk-complete li p,.walk-setup-grid,.walk-sources,.admin-person,#admin-learner-name,.admin-email,#admin-answers,#admin-events,#admin-reflections,.admin-reference-list,.account-card:has(#sync-now) h2,[data-no-i18n],svg,script,style,textarea,code';
+const protectedSelector='.choice-text,.choice-feedback,.feedback>p,.pb-news,.pb-brief ol,.pb-card>p,.pb-card h2,.pb-objectives,.concept-panel>.explain,.mechanism,.cases,.example,.formula,.walk-why,.walk-math,.walk-reason h4,.walk-predict p,.walk-predict textarea,.walk-predict details p,.walk-complete li h4,.walk-complete li p,.walk-setup-grid,.walk-sources,.admin-person,#admin-learner-name,.admin-email,#admin-answers,#admin-events,#admin-reflections,.admin-reference-list,.account-card:has(#sync-now) h2,[data-no-i18n],svg,script,style,textarea,code';
 function translate(text){
  const trimmed=text.trim();if(!trimmed)return text;
  let value=dictionary[trimmed];
  if(!value){const m=trimmed.match(/^([←↻✓]\s*)?(.*?)(\s*[→↗↓])?$/);if(m&&dictionary[m[2]])value=(m[1]||'')+dictionary[m[2]]+(m[3]||'')}
- if(!value){const rules=[[/^(\d+) matching questions$/,m=>`${m[1]} 道符合条件的题目`],[/^Tutorial (\d+)$/,m=>`习题 ${m[1]}`],[/^(\d+) cases · (\d+) parts$/,m=>`${m[1]} 个案例 · ${m[2]} 个小问`],[/^(\d+) of (\d+) answered$/,m=>`已作答 ${m[1]} / ${m[2]}`],[/^Page (\d+)$/,m=>`第 ${m[1]} 页`],[/^(\d+) \/ (\d+) steps visited$/,m=>`已查看 ${m[1]} / ${m[2]} 步`],[/^Answer ([A-F])$/,m=>`正确答案 ${m[1]}`],[/^Chapter (\d+)$/,m=>`第 ${m[1]} 章`],[/^(\d+) questions$/,m=>`${m[1]} 题`]];for(const[pattern,fn]of rules){const m=trimmed.match(pattern);if(m){value=fn(m);break}}}
+ if(!value){const rules=[[/^(Cross out|Restore) option ([A-F])$/,m=>`${m[1]==='Cross out'?'划去':'恢复'}选项 ${m[2]}`],[/^(\d+:\d+) remaining$/,m=>`剩余 ${m[1]}`],[/^(\d+) matching questions$/,m=>`${m[1]} 道符合条件的题目`],[/^Tutorial (\d+)$/,m=>`习题 ${m[1]}`],[/^(\d+) cases · (\d+) parts$/,m=>`${m[1]} 个案例 · ${m[2]} 个小问`],[/^(\d+) of (\d+) answered$/,m=>`已作答 ${m[1]} / ${m[2]}`],[/^Page (\d+)$/,m=>`第 ${m[1]} 页`],[/^(\d+) \/ (\d+) steps visited$/,m=>`已查看 ${m[1]} / ${m[2]} 步`],[/^Answer ([A-F])$/,m=>`正确答案 ${m[1]}`],[/^Chapter (\d+)$/,m=>`第 ${m[1]} 章`],[/^(\d+) questions$/,m=>`${m[1]} 题`]];for(const[pattern,fn]of rules){const m=trimmed.match(pattern);if(m){value=fn(m);break}}}
  return value?text.replace(trimmed,value):text;
 }
 function apply(){
@@ -123,13 +122,13 @@ function apply(){
  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let node;
  while(node=walker.nextNode()){
   const parent=node.parentElement;if(!parent||parent.closest(protectedSelector)||parent.id==='site-language')continue;
-  if(!parent.closest('button,a,label,summary,select,.topbar,.eyebrow,.small,.badge,.stat span,.stat strong,.account-status,h1,h2,h3,h4,.account-card,.note,dt,.admin-small,.intro,.confidence,.session-options,.translation-tools')||parent.closest('.question-card>h2'))continue;
+  if(!parent.closest('button,a,label,summary,select,.topbar,.eyebrow,.small,.badge,.stat span,.stat strong,.account-status,h1,h2,h3,h4,.account-card,.note,dt,.admin-small,.intro,.confidence,.session-options,.translation-tools,#session-timer')||parent.closest('.question-card>h2'))continue;
   const previous=originals.get(node);let original=node.nodeValue;
   if(previous&&(original===previous.translated||original===previous.original))original=previous.original;
   const translated=language==='zh'?(original.trim()==='Tutorial'&&parent.matches('label')&&parent.querySelector('#filter-tutorial')?original.replace('Tutorial','习题'):translate(original)):original;originals.set(node,{original,translated});if(node.nodeValue!==translated)node.nodeValue=translated;
  }
  for(const el of document.querySelectorAll('[placeholder],[aria-label],[title]')){
-  if(el.closest('.choices,.admin-person,[data-no-i18n]'))continue;
+  if(el.closest('.choice-text,.choice-feedback,.admin-person,[data-no-i18n]'))continue;
   for(const attribute of ['placeholder','aria-label','title']){if(!el.hasAttribute(attribute))continue;const key='i18n'+attribute.replace('-',''),current=el.getAttribute(attribute),original=el.dataset[key]||current;if(!el.dataset[key])el.dataset[key]=original;el.setAttribute(attribute,language==='zh'?translate(original):original)}
  }
  const control=document.querySelector('#site-language');if(control)control.value=language;
@@ -139,8 +138,4 @@ export function initLanguage(){
  const control=document.querySelector('#site-language');control?.addEventListener('change',()=>{language=control.value==='zh'?'zh':'en';try{localStorage.setItem(KEY,language)}catch{}apply()});
  window.addEventListener('storage',e=>{if(e.key===KEY){language=e.newValue==='zh'?'zh':'en';apply()}});
  observer=new MutationObserver(()=>{if(!scheduled){scheduled=true;requestAnimationFrame(apply)}});apply();window.ec2k2TranslateUI=apply;
-}
-export function translationLinks(text,label='Translate question · 中文'){
- const chunks=[];let rest=String(text);while(rest.length>4800){let cut=rest.lastIndexOf('\n',4800);if(cut<1000)cut=4800;chunks.push(rest.slice(0,cut));rest=rest.slice(cut).trimStart()}if(rest)chunks.push(rest);
- return chunks.map((chunk,i)=>`<a class="translation-link quiet" href="https://translate.google.com/?sl=en&amp;tl=zh-CN&amp;text=${encodeURIComponent(chunk)}&amp;op=translate" target="_blank" rel="noopener noreferrer">${label}${chunks.length>1?` ${i+1}/${chunks.length}`:''} ↗</a>`).join(' ');
 }

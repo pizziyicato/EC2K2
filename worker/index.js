@@ -134,7 +134,7 @@ export default {
   if(!['GET','HEAD'].includes(request.method))return new Response('Method not allowed',{status:405});
   const path=url.pathname==='/'?'/index.html':url.pathname,asset=ASSETS[path];
   if(!asset)return new Response('Not found',{status:404,headers:{'X-Content-Type-Options':'nosniff'}});
-  const publicAsset=new Set(['/index.html','/app.js','/account.js','/access.js','/home.js','/home.css','/admin.js','/admin.css','/styles.css','/i18n.js']).has(path);
+  const publicAsset=new Set(['/index.html','/app.js','/account.js','/access.js','/home.js','/home.css','/admin.js','/admin.css','/styles.css','/i18n.js','/translation.css']).has(path);
   if(!publicAsset){
    const user=identity(request);if(!user)return json({error:'Sign in to open the study material.'},401);
    if(!env.DB)return json({error:'Account storage is temporarily unavailable.'},503);

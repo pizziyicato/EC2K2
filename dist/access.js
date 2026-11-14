@@ -20,6 +20,6 @@ export async function loadProtectedCourse({getAccess,signal,fetcher=globalThis.f
  if(responses.some(r=>!r.ok))throw new Error('Course content could not be loaded. Please try again.');
  const [data,banks,pb]=await Promise.all(responses.map(r=>r.json()));guard();
  if(!Array.isArray(data.lessons)||!Array.isArray(data.questions)||!Array.isArray(banks.st)||!Array.isArray(banks.recaps)||!Array.isArray(pb.questions)||!Array.isArray(pb.cases)||!Array.isArray(pb.sources))throw new Error('Course data format is invalid.');
- const [quiz,labs,walkthrough]=await Promise.all([importer('./quiz.js?v=6'),importer('./labs.js?v=4'),importer('./walkthrough.js?v=6')]);guard();
+ const [quiz,labs,walkthrough]=await Promise.all([importer('./quiz.js?v=7'),importer('./labs.js?v=4'),importer('./walkthrough.js?v=6')]);guard();
  return {data,banks,pb,quiz,labs,walkthrough};
 }

@@ -1,8 +1,8 @@
 import {createAdmin} from './admin.js?v=6';
 import {createAccountSync} from './account.js?v=7';
 import {cleanBootstrapProgress,loadProtectedCourse} from './access.js?v=7';
-import {renderHome} from './home.js?v=6';
-import {initLanguage} from './i18n.js?v=6';
+import {renderHome} from './home.js?v=7';
+import {initLanguage} from './i18n.js?v=7';
 initLanguage();
 const $=s=>document.querySelector(s),E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const GUEST_KEY='ec2k2-study-v2';let KEY=GUEST_KEY,AC,ADMIN,appReady=false,courseDataReady=false,lastActivityView='',courseOwner='',courseEpoch=-1,courseError='',loadingTask=null,loadingController=null;

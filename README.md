@@ -20,7 +20,7 @@ The banks contain 780 questions and 4,280 option explanations. Practice and exam
 
 Decoded works through derivations, graph construction, increases, decreases and boundary cases separately. It contains 2,450 steps, 746 prediction checkpoints and 121 diagrams. Typed reflections and self-checks are learning records, not automatic evidence of mastery. The earlier IS–LM–FE / AD–AS simulator remains integrated under `dist/policy/`.
 
-English and 简体中文 controls are available. Questions remain in English. Explicit translation links open the displayed question and choices, case brief, or revealed explanations in Google Translate. They do not send account information or a learner’s saved response. Longer text is split into separate translation links.
+English and 简体中文 controls are available. Questions remain in English. Built-in expandable panels show bundled Chinese translations of questions, choices, case briefs and revealed explanations without leaving EC2K2. Translations are prepared with EC2102 terminology and checked against the source equations, quantities and option meanings. The browser requests only the site’s protected translation file; it sends no question or learner text to a translation service. This is machine-assisted study support, with the English original authoritative.
 
 ## Accounts and privacy
 
@@ -37,6 +37,12 @@ On 14 November 2026, all existing 620 questions and 3,320 option explanations we
 Earlier source audits covered 13 lecture PDFs and associated tutorial material. Original lecture PDFs, answer files and recordings are not redistributed. Source references and coverage ledgers remain in the course data. A separate final Week 13 assessment-coverage announcement was not available. Difficulty ratings are study-design judgments, not official exam labels or predictions.
 
 Local validation covered all 780 rendered keys and 4,280 feedback mappings, mobile layouts, redo/strikethrough, exam hiding, timers, backups, all 25 efficiency-wage steps, mandatory access, Chinese controls, translation payloads and the public homepage. Account tests covered concurrent changes, identity switching, cross-device resume, owner-only records, consent renewal and denied unauthorized requests. Local identity tests emulate trusted Sites headers; they do not prove the external ChatGPT sign-in handoff.
+
+## November 14 context and translation update
+
+The homepage credit is Made by Ziyi. Every PB20 part now links a concrete scenario change to its EC2102 mechanism. Affair-related cases use fictional recovery expenses, counselling/nonwork time, separate cash budgets, disclosure-reporting services and counselling-sector capacity. Midterm cases use hypothetical congressional proposals, enactment or reversal, fiscal financing and clearly distinguished monetary assumptions. A personal event is never treated as proof of an aggregate macroeconomic effect. All 160 rewritten parts were independently reviewed; keys are preserved, with revised PB attempts marked for review.
+
+Chinese text is bundled in `dist/translations-zh.json`; `translation.js` and `translation.css` implement its inline display. All 780 questions, 4,280 option explanations, 20 case briefs and 100 S&T difficulty notes have prepared Chinese translations. The bundle contains 9,744 distinct text entries. Exact-source matching preserves the displayed option order. Translated solutions remain hidden until their English counterparts are available. No external translation service or model is loaded by the website. Browser checks matched 14,500 displayed translation segments across all 780 questions, checked every case brief, and verified exam hiding, account protection, revised-progress migration and mobile layout. The existing typography still uses web fonts, independently of translation.
 
 ## Build and hosting
 
