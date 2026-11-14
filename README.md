@@ -1,57 +1,54 @@
 # EC2K2
 
-Public EC2102 study site at https://ec2k2.pizziyicato.chatgpt.site.
+An independent EC2102 Macroeconomic Analysis I study companion.
 
-## Content
+[Open EC2K2](https://ec2k2.pizziyicato.chatgpt.site) · [GitHub profile](https://github.com/pizziyicato) · [Instagram](https://www.instagram.com/pizziyicato/)
 
-IB400 contains 400 original five-choice MCQs with answer keys, explanations for all choices, concept links, three difficulty levels, topic filters, practice and exam modes, review queues, bookmarks and browser-local progress with export/import.
+## Study sections
 
-S&T100 contains 100 six-choice synthesis MCQs designed above the IB400 Challenge level. Each combines course mechanisms, constraints, multiple changes or reverse reasoning and explains why its reasoning demands go further.
+The public homepage explains five sections in this order.
 
-Wong Wei Kang Recaps converts all ten supplied tutorials into 120 six-choice revision MCQs, mapped to 108 requested source parts. The source-part map connects every requested subpart to one or more questions. All choices have explanations and each question links to Decoded. The section identifies the course lecturer and is an independent study adaptation.
+| Section | Purpose |
+| --- | --- |
+| IB400 | 400 five-choice questions across Tutorial, Exam and Challenge levels |
+| S&T100 | 100 six-choice synthesis questions benchmarked above relevant IB400 Challenge questions |
+| PB20 | 20 connected cases, each with eight six-choice MCQ parts, for 160 additional questions |
+| EC2102 Decoded | 148 concepts across 12 chapters, 740 guided sequences and 21 interactive experiments |
+| Assoc. Prof Wong Wei Kang Recaps | 120 six-choice revision questions mapped to 108 source parts across all ten supplied tutorials |
 
-The navigation order is IB400, S&T100, EC2102 Decoded, then Wong Wei Kang Recaps. Every bank supports separate progress, source or shuffled order, option strikethrough, practice and exam modes, question redo and full-set redo. Strikes use stable option identities and survive resume and backup import. Redo clears the current response, confidence and eliminations while retaining the previous marked result until the next check, the attempt count and the first-answer result. Starting a new set replaces the single active session. Existing version-2 backups remain compatible.
+The banks contain 780 questions and 4,280 option explanations. Practice and exam modes support stable option identities, shuffled choice order, strikethrough/restore, confidence, bookmarks, redo and progress backups. PB20 retains the case brief across its eight parts. Twelve cases use Jensen Huang’s publicly acknowledged affair news as context; eight use US midterms. All model households, economic shocks and numerical scenarios are hypothetical. Current-affairs knowledge is not assessed.
 
-EC2102 Decoded contains 12 chapters, 148 concept cards and 21 interactive experiment views. Every concept now has a guided derivation, graph-building sequence, independent increase and decrease sequences, and edge-case reasoning. Predict-before-reveal checkpoints, typed explanations, curve highlighting and an enlarged graph view support active study. Walk position and predictions are stored with browser-local progress and included in export/import. Each concept opens a relevant experiment below its walkthrough.
+Decoded works through derivations, graph construction, increases, decreases and boundary cases separately. It contains 2,450 steps, 746 prediction checkpoints and 121 diagrams. Typed reflections and self-checks are learning records, not automatic evidence of mastery. The earlier IS–LM–FE / AD–AS simulator remains integrated under `dist/policy/`.
 
-The November 9 audit covered 13 supplied lecture PDFs, tutorials 1–9, two official answer sheets and eight annotated companions, totalling 857 pages across 32 PDFs. The November 14 expansion additionally uses all ten tutorial question papers and all ten answer files. The earlier audit remains dated separately. The original IS–LM–FE / AD–AS simulator is integrated under `dist/policy/`. The old top-level hash routes redirect into the new sections.
+English and 简体中文 controls are available. Questions remain in English. Explicit translation links open the displayed question and choices, case brief, or revealed explanations in Google Translate. They do not send account information or a learner’s saved response. Longer text is split into separate translation links.
 
-Tutorial 10 now also extends the efficiency-wage walkthrough with the joint profit-maximization first-order conditions, the positive-employment qualification, the discrete effort/wage comparison, employment calculation and labor-availability boundary. Existing step indexes were retained. Decoded now has 2,450 steps and 746 prediction checkpoints.
+## Accounts and privacy
 
-## November 14 validation
+The homepage is public and registration is open to everyone. Study content requires ChatGPT sign-in and creation of an EC2K2 profile. Sites handles authentication; this repository does not store passwords. The application also protects its study files at the server.
 
-All 220 new questions and their 1,320 choice explanations were independently reviewed against the tutorial sources and stated model assumptions. Six draft S&T questions were strengthened after comparison with IB400 Challenge. Ambiguous utility weights, finite MPC responses, asset timing and borrowing assumptions were made explicit. Recap questions remain self-contained in shuffled sets.
+Account progress syncs across devices, with separate local copies per user, version checks, concurrent merges and guards against account changes. Earlier browser-only progress can be imported explicitly. Export/import remains available to signed-in learners.
 
-Browser checks passed all 620 rendered keys and all 3,320 option-feedback mappings, plus five/six-option layouts, strikethrough/restore, selected-option elimination, saved order and markings, redo with retained attempt counts, hidden exam answers, timer expiry, export/import including sixth choices, legacy backups, source-question Back navigation, bank filters, desktop/mobile layouts and the 25-step efficiency-wage walkthrough. IB400's data file is byte-identical to its previously audited version.
+Before profile creation, the site explains that the owner can view display names, sign-in names and email addresses, answers, confidence, retries, guided reflections, page/study activity and timestamps. These records are private to the learner and owner. The owner dashboard is restricted by the private `OWNER_EMAIL` runtime secret and provides learner search, response review, paginated activity and explicit private exports. User records and the owner email are not part of this repository. Activity logging is best effort when browsers are offline or close before upload; it is not a guaranteed audit trail of every action.
 
-## November 10 guided walkthroughs
+## Content review
 
-All 148 concepts have five guided sequences, with 2,443 steps, 743 prediction checkpoints and 121 diagrams (86 plots and 35 reasoning maps). Symbol tables identify assumptions and connect illustrative notation to the lecture notation. The IS, LM and AD sequences explicitly transfer underlying market equilibria into the derived axes before drawing the locus. Both directional cases and boundary branches are worked separately. Figures use labelled numerical teaching calibrations. Final browser verification passed all 2,443 steps, 740 sequences, 743 checkpoints and all 12 mobile chapter layouts, with no page errors. The UI checks also passed resume, typed predictions, export/import, keyboard navigation, graph enlargement and a question-bank regression.
+On 14 November 2026, all existing 620 questions and 3,320 option explanations were reviewed again. All ten tutorial papers and answer files were reconciled to the coverage ledger, and all 100 S&T items were compared with actual IB400 Challenge items. Twenty-five entries received wording, assumption, explanation or source-reference clarifications. The existing answer keys did not change. PB20’s 160 new questions were separately reviewed and numerical results checked.
 
-Prediction text and visited steps are learning records, not automatic proof of understanding. The existing 400 questions and answer content are unchanged by this update.
+Earlier source audits covered 13 lecture PDFs and associated tutorial material. Original lecture PDFs, answer files and recordings are not redistributed. Source references and coverage ledgers remain in the course data. A separate final Week 13 assessment-coverage announcement was not available. Difficulty ratings are study-design judgments, not official exam labels or predictions.
 
-## November 9 content audit
+Local validation covered all 780 rendered keys and 4,280 feedback mappings, mobile layouts, redo/strikethrough, exam hiding, timers, backups, all 25 efficiency-wage steps, mandatory access, Chinese controls, translation payloads and the public homepage. Account tests covered concurrent changes, identity switching, cross-device resume, owner-only records, consent renewal and denied unauthorized requests. Local identity tests emulate trusted Sites headers; they do not prove the external ChatGPT sign-in handoff.
 
-All 400 questions, their answer keys and all 2,000 choice explanations were reviewed against the source material. The bank now contains 162 Tutorial, 193 Exam and 45 Challenge questions. The audit revised 129 question entries, including 46 changes to stems or choices, and added nine concepts while expanding 122 existing explanations. Revised attempts are flagged for another attempt without erasing other progress. Choice order is randomized per session and retained when resuming or importing a backup.
+## Build and hosting
 
-The consumption experiment includes the course square-root utility and a separately labelled log-utility illustration. Model and chart verification passed 9,596 checks. Browser checks covered all 148 concept routes, all 21 experiment views, all 400 displayed answers, all 2,000 feedback mappings, desktop/mobile layouts, timers, review, backups and revised-content migration.
+This application uses an ES-module Worker and a Sites-managed D1 database. Run `npm ci` and `npm run build`. The build embeds the public shell and protected study assets into `dist/server/index.js`. Serve it through the Sites Worker runtime; serving `dist` as an unguarded static directory bypasses the mandatory-account design.
 
-## Source layout
+`.openai/hosting.json` preserves the existing Site identity, public audience and `DB` binding. Configure `OWNER_EMAIL` privately in the runtime. Deploy through Sites so that the schema-only SQL migrations in `drizzle/` are applied before the Worker. Existing migrations are immutable after publication.
 
-- `dist/data.json` stores the original question and concept content with PDF page references.
-- `dist/banks.json` stores S&T100, tutorial recaps and the tutorial-part coverage ledger.
-- `dist/quiz.js` renders the shared five/six-option quiz experience and validates saved sessions.
-- `dist/walkthroughs.json` stores the guided sequences, source references and equation-generated diagrams.
-- `dist/walkthrough.js` renders step navigation, graph reveals, predictions and saved walkthrough progress.
-- `dist/app.js` implements the study interface and progress storage.
-- `dist/labs.js` contains the interactive model equations and charts.
-- `dist/styles.css` implements the responsive layout.
-- `.openai/hosting.json` preserves the existing Site identity. Preserve the public audience requested on November 14.
+- `dist/data.json`, `banks.json`, `pb20.json` and `walkthroughs.json` contain original study material and source mappings.
+- `dist/home.js`, `home.css` and `i18n.js` implement the public guide and interface language.
+- `dist/app.js`, `access.js`, `account.js` and `admin.js` implement account-aware study and owner views.
+- `dist/quiz.js`, `pb20.js`, `walkthrough.js` and `labs.js` implement practice and interactive explanations.
+- `worker/index.js` enforces account and owner access, progress versions and scoped activity recording.
+- `db/schema.ts` and `drizzle/` define persisted account, progress and event records.
 
-This is a buildless static site. Serve the `dist` directory for local preview. The Sites source helper commits, pushes and packages that directory for the existing Site.
-
-## Boundaries
-
-All ten tutorials and their answer files are available in the November 14 source set. A separate final Week 13 assessment-coverage announcement was not found. Do not claim certification of the final assessment scope. Difficulty classifications are pedagogical judgments, not official exam labels. Numerical models are illustrative. Progress is local to each browser and can be backed up with Export progress. Public access does not publish a visitor's local progress.
-
-Preserve distinctions between Classical and fixed-FE Keynesian fiscal models, horizontal fixed-price SRAS and misperceptions SRAS, nominal and real interest-rate bounds, saving and assets with initial wealth, and the fixed-natural-rate and hysteresis hypotheses.
+This is not an official university platform or an endorsement by the lecturer. Preserve the course’s distinctions between Classical and fixed-FE Keynesian fiscal models, horizontal and misperceptions SRAS, nominal and real interest-rate bounds, saving and initial assets, and fixed natural-rate versus hysteresis hypotheses.
